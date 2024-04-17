@@ -65,7 +65,7 @@ venv.bak/
 # Exclude directories
 docgen_model/
 dist/
-
+.pypirc/
 
 # pytype static type analyzer
 .pytype/

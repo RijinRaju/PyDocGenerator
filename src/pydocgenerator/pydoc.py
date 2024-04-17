@@ -41,24 +41,19 @@ class PyDOC():
     def process_python_file(self):
         # Parse the source code
         module = ast.parse(self.source_code)
-
         # Find all function definitions
         functions = [node for node in module.body if isinstance(
             node, ast.FunctionDef)]
-
+        
         # Generate docstrings for each function
         for function in functions:
            # Convert the function AST back into source code
             function_source = astunparse.unparse(function)
-
-
             # Generate the docstring
             docstring = self.generate_docstring(
                 function_source)  # pass the function object
-
             # Insert the docstring into the function AST
             function.body.insert(0, ast.Expr(value=ast.Str(s=docstring)))
-
             # Unparse the modified AST back into source code
             self.source_code = astunparse.unparse(module)
 
@@ -69,10 +64,8 @@ class PyDOC():
     def insert_docstring(function_source, docstring):
         # Split the function source code into lines
         lines = function_source.split('\n')
-
         # Insert the docstring after the function definition
         lines.insert(1, f'    """{docstring}"""')
-
         # Join the lines back together
         return '\n'.join(lines)
 
