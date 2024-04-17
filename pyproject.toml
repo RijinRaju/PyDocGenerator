@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pydcogenerator"
+version = "0.0.5"
+authors = [
+  { name="Rijin", email="rijinraj856@example.com" },
+  { name="Amal", email="amal76735@example.com" },
+  { name="Yadhu", email="yadhu2309856@example.com" }
+]
+description = "A library for generating docstring for python programms."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[project.urls]
+Homepage = "https://github.com/RijinRaju/PyDocGenerator"
+Issues = "https://github.com/RijinRaju/PyDocGenerator/issues"
